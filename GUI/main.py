@@ -9,11 +9,14 @@ from db import (
     get_request_by_id, update_request, delete_request
 )
 
+current_dir = os.path.dirname(__file__)
+
 # ======================================================
 # INITIAL SETUP
 # ======================================================
 create_tables()
-scraper_path = os.path.abspath("../scrapper")
+
+scraper_path = os.path.join(current_dir, "..", "scrapper")
 
 st.set_page_config(page_title="Scraper Manager", page_icon="🕷️", layout="wide")
 
@@ -68,7 +71,7 @@ def on_scraper_finished(request_name, contacts):
 # ======================================================
 # SIDEBAR
 # ======================================================
-current_dir = os.path.dirname(__file__)
+
 img_path = os.path.join(current_dir, "resources", "logo3.png")
 st.sidebar.image(img_path, use_container_width=True)
 choice = st.sidebar.radio("Selecciona una sección",
