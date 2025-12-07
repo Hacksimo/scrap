@@ -68,7 +68,9 @@ def on_scraper_finished(request_name, contacts):
 # ======================================================
 # SIDEBAR
 # ======================================================
-st.sidebar.image("resources/logo3.png", use_container_width=True)
+current_dir = os.path.dirname(__file__)
+img_path = os.path.join(current_dir, "resources", "logo3.png")
+st.sidebar.image(img_path, use_container_width=True)
 choice = st.sidebar.radio("Selecciona una sección",
     ["Nueva petición", "Historial", "Editar petición"])
 
